@@ -1,0 +1,20 @@
+{% extends "index.html" %} 
+
+{% block content %}
+        
+    <div class="mb-3 blog-post p-3">
+        <img class="img-fluid rounded-circle" src="{{url_for('static',filename='Itemes/'+post.author.image_file)}}" alt="">
+        <div class="content-blog-post">
+            <div class="sub-title-blog">
+                <a href="#">{{ post.author.username }}</a>
+                <small class="text-center ml-5 mt-1">{{ post.date_post.strftime('%Y-%m-%d') }}</small>
+            </div>
+            <hr>
+            <div class="blog-detail">
+                <h2>{{post.title}}</h2>
+                <p>{{post.content}}</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

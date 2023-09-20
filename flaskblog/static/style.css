@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #F8F9F9;
+    font-family: 'Robote' sans-serif;
+}
+
+
+/* -------------------------------------
+    Thepography Style
+   ------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 5rem;
+}
+
+h2 {
+    font-size: 3rem;
+    line-height: 5rem;
+}
+
+h3 {
+    font-size: 2rem;
+    line-height: 5rem;
+}
+
+
+h4 {
+    font-size: 1.8rem;
+    line-height: 5rem;
+}
+
+p {
+    font-size: 1.35rem;
+    line-height: 2rem;
+    font-weight: 400;
+    letter-spacing: .5px;
+}
+
+hr {
+    margin: 0;
+}
+
+
+/* -------------------------------------
+    Navigation Style
+   ------------------------------------- */
+
+.navbar {
+    background-color: #34495E;
+}
+
+.navbar .navbar-brand {
+    font-weight: 500;
+    color: #ffffff;
+    line-height: 2;
+}
+
+
+.navbar .collapse .navigation-link {
+    font-size: 1.35rem;
+    line-height: 2rem;
+    font-weight: 400;letter-spacing: .5px;
+    text-transform: uppercase;
+    color: #ffffff;
+    transition: all ease-in .4s;
+}
+
+.navbar .collapse .navigation-link:hover {
+    background-color: transparent;
+    color: #fff;
+}
+
+.navbar .collapse .navigation-link::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: transparent;
+    transition: width .3s ease, background-color .4s ease;
+}
+
+.navbar .collapse .navigation-link:hover::after {
+    width: 100%;
+    background-color: #fff;
+    color: #fff;
+}
+
+.navbar .collapse a img {
+    width: 40px;
+    height: 40px;
+}
+
+
+/* -------------------------------------
+    main Style
+   ------------------------------------- */
+
+#home{
+    
+    position: relative;
+    height: 100vh;
+}
+
+#home .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+#home .blog-post {
+    display: flex;
+    flex: row;
+    border: 1px solid #d5d5d5;
+    border-radius: 2px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+    margin-bottom: 24px;
+}
+
+#home .blog-post img {
+    height: 60px;
+    width: 60px;
+}
+
+#home .blog-post .content-blog-post {
+    padding-left: 24px;
+}
+
+.sub-title-blog {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+}
+
+.sub-title-blog a {
+    font-size: 1.6rem;
+    font-weight: normal;
+    line-height: 2rem;
+    text-decoration: none;
+}
+
+.sub-title-blog p {
+    margin-top: 12px;
+    margin-left: 24px;
+}
+
+.blog-detail h1 a{
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-decoration: none;
+    color:#34495E
+}
+
+.blog-detail h1:hover a{
+    color:cornflowerblue
+}
+
+.blog-detail p {
+    font-weight: 400;
+}
+
+#home .info-box {
+    position: absolute;
+    top: 5%;
+    right: -10%;
+}
+
+#home .info-box-under {
+    border: 1px solid #dcdcdc;
+    width: 50%;
+    border-radius: 2px;
+    padding: 6px 16px;
+    padding-bottom: 12px;
+}
+
+.info-box h3 {
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+.info-box .list-group-item {
+    background-color: #f7fafb;
+}
+
+/* -------------------------------------
+    contact Style
+   ------------------------------------- */
+
+#home .content-section {
+    background-color: #f7fafb;
+    border: 1px solid #dcdcdc;
+    padding: 24px;
+    box-shadow: 1px 3px 20px rgba(0, 0, 0, 0.3);
+}
+
+#home .content-section legend {
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.content-section .div-input label {
+    font-size: 1.4rem;
+    font-weight: normal;
+}
+
+.content-section .div-input input {
+    font-size: 1.35rem;
+    font-weight: normal;
+}
+
+.content-section .form-group span {
+    font-size: 1.25rem;
+}
+
+#home .content-section .btn-form {
+    width: 75px;
+    padding: 6px 12px;
+    margin-left: 12px;
+    font-size: 1.4rem;
+    font-weight: 400;
+}   
+
+#home > main > div > div:nth-child(1) > div > div > small {
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+#home > main > div > div:nth-child(1) > div > div > small a{
+    text-decoration:none;
+}
+
+.content-section .form-check {
+    display: flex;
+    align-items: center;
+}
+
+.content-section .form-check label {
+    margin-top: 1px;
+    margin-left: 4px;
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+#home > main > div > div:nth-child(1) > div > form > small > a {
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: normal;
+}
+
+/* -------------------------------------
+    Account Style
+   ------------------------------------- */
+
+
+#home .content-account {
+    padding: 24px;
+    border: 1px solid #dcdcdc;
+    border-radius: 2px;
+    background-color: #f7f7f7;
+}
+
+#home .content-account .upload-file {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#home .content-account .row {
+    padding-left: 12px;
+}
+
+#home .content-account .info-account h3 {
+    font-weight: 400;
+}
+
+#home .content-account .content-section {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+#home .content-account .custum-file-upload-label {
+    height: 100px;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    border: 2px dashed #cacaca;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 48px 35px -48px rgba(0, 0, 0, 0.1);
+}
+
+#home .content-account .custum-file-upload-label .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#home .content-account .custum-file-upload-label span {
+    font-weight: 400;
+    color: rgba(75, 85, 99, 1);
+}
+
+#home .content-account .custum-file-upload-input {
+    display: none;
+}
+
+
+/* -------------------------------------
+    New Post Style
+   ------------------------------------- */
+
+
+#home .content-section .div-post label {
+    font-size: 1.4rem;
+    font-weight: normal;
+}
+
+#home .content-section .div-post input {
+    font-size: 1.4rem;
+    font-weight: normal;
+    padding: 6px 16px;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+#home .content-section .div-post input:focus {
+    outline: none;
+}
+
+#home .content-section .div-post textarea {
+    font-size: 1.4rem;
+    font-weight: normal;
+    padding: 6px 16px;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    overflow-y: hidden;
+    resize: none;
+}
+
+#home .content-section .div-post textarea:focus {
+    outline: none;
+}

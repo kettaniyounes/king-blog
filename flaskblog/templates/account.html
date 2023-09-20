@@ -1,0 +1,80 @@
+{% extends "index.html" %} 
+
+{% block content %}
+    <div class="content-account">
+        <div class="row">
+            <div class="image-account media">
+                <img class="img-fluid rounded-circle w-50" src="{{image_file}}" alt="photo profile of account">
+            </div>
+            <div class="info-account">
+                <h3> {{ current_user.username }} </h2>
+                <h5> {{ current_user.email }} </h3>
+            </div>
+        </div>
+        <div class="content-section mt-5">
+            <form method="POST" action="" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Account Info</legend>
+                    <div class="form-group div-input">
+                        {{ form.username.label(class="form-control-label") }}
+    
+                        {% if form.username.errors %}
+                            {{ form.username(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.username.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.username(class="form-control form-control-lg") }}
+                        {% endif %}
+    
+                    </div>
+                    <div class="form-group div-input">
+                        {{ form.email.label(class="form-control-label") }}
+                        
+                        {% if form.email.errors %}
+                            {{ form.email(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.email.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.email(class="form-control form-control-lg") }}
+                        {% endif %}
+    
+                    </div>
+                    <div class="form-group upload-file">
+                        <label class="custum-file-upload-label" for="customFile">
+                            <div class="icon">
+                                <img class="img-fluid w-25" src="{{url_for('static', filename='Itemes/file.png')}}" alt="">
+                            </div>
+                            <div class="text">
+                                <span>Update Image</span>
+                            </div>
+                        </label>
+                        {{ form.picture_profile(class='form-control-file custum-file-upload-input', id='customFile') }}
+                        <p id="file-name-display" class="text-muted"></p>
+                        {% if form.picture_profile.errors %}
+                            {% for error in form.picture_profile.errors %}
+                                <span class="text-danger">{{ error }}</span><br>
+                            {% endfor %}
+                        {% endif %}
+                        <script>
+                            document.getElementById('customFile').addEventListener('change', function() {
+                                const fileName = this.files[0].name;
+                                const fileDisplay = document.getElementById('file-name-display');
+                                fileDisplay.textContent = `Selected File: ${fileName}`;
+                            });
+                        </script>
+                    </div>          
+                </fieldset>
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-outline-info btn-form") }}
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

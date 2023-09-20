@@ -1,0 +1,55 @@
+{% extends "index.html" %} 
+
+{% block content %}
+        
+    <div class="content-section mt-5">
+        <form method="POST" action="" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">{{legend}}</legend>
+                <div class="form-group div-post">
+                    {{ form.title.label(class="form-control-label",for="floatingEmptyPlaintextInput") }}
+
+                    {% if form.title.errors %}
+                        {{ form.title(class="form-control-plaintext is-invalid ml-3",placeholder="Write here ...") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.title.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.title(class="form-control-plaintext ml-3" ,placeholder="Write here ...") }}
+                    {% endif %}
+
+                </div>
+                <div class="form-group div-post">
+                    {{ form.content.label(class="form-control-label",for="floatingEmptyPlaintextInput") }}
+                    
+                    {% if form.content.errors %}
+                        {{ form.content(class="form-control form-control-lg is-invalid ml-2", id="auto-grow-textarea",placeholder="Write here ...") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.content.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.content(class="form-control form-control-lg ml-2",id="auto-grow-textarea",placeholder="Write here ...") }}
+                    {% endif %}
+                    <script>
+                        const textarea = document.getElementById('auto-grow-textarea');
+                
+                        // Add an input event listener to the textarea
+                        textarea.addEventListener('input', function () {
+                            this.style.height = 'auto'; // Reset height to auto
+                            this.style.height = (this.scrollHeight) + 'px'; // Set height to scrollHeight
+                        });
+                    </script>
+                </div>       
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info btn-form") }}
+            </div>
+        </form>
+    </div>
+
+{% endblock content %}
